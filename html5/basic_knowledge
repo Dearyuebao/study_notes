@@ -1,0 +1,10 @@
+//the website to check your html file
+https://validator.w3.org/
+
+//getting to know html
+https://learn.shayhowe.com/html-css/getting-to-know-html/
+
+semantics within html:
+<div>    don't hold anyb semantic value, only styling purpose, block-level element
+<span>   don't hold anyb semantic value, only styling purpose, inline-level element
+<p>      paragraph
