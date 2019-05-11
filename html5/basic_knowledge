@@ -4,7 +4,37 @@ https://validator.w3.org/
 //getting to know html
 https://learn.shayhowe.com/html-css/getting-to-know-html/
 
-semantics within html:
+elements within html:
 <div>    don't hold anyb semantic value, only styling purpose, block-level element
 <span>   don't hold anyb semantic value, only styling purpose, inline-level element
 <p>      paragraph
+         <p>Steve Jobs was a co-founder and longtime chief executive officer at Apple. </p>
+
+<h1> <h2> ... <h6> headings are used to break up contents and establish hierarchy
+                   <h1>Heading Level 1</h1>
+<strong> bold text & make sense
+         <p><strong>Caution:</strong> Falling rocks.</p>
+<b>      bold text & make no sense of emphasize
+         semantically used to give strong importance to text
+         <p>This recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
+<em> italicize text with emphasis
+      <!-- Stressed emphasis -->
+      <p>I <em>love</em> Chicago!</p>
+<i> italicize but semantically alternate tone
+      <!-- Alternative voice or tone -->
+      <p>The name <i>Shay</i> means a gift.</p>
+<title> the title of the website
+<small>&copy; Styles Conference</small> :© Styles Conference
+      
+Building structure: All of these new elements are intended to give meaning to the organization of our pages
+                    and improve our structural semantics. 
+<header>...</header>
+<nav>...</nav>
+<article>...</article>
+<section>...</section>
+<footer>...</footer>
+<aside>...</aside>
+
+
+comments: html <!--comments-->
+          css /*comments*/
