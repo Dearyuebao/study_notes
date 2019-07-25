@@ -1,0 +1,67 @@
+/*generate english words:place holder text:baconipsum.com/
+cssfontstack.com/
+*/
+p{
+	font-family:"Arial";
+}
+
+h1{
+	font-family:Georgia;
+}
+
+body{
+	font-size:10px;
+}
+
+h1{
+	font-size: 100px;
+}
+
+span{
+	font-size:2.0em;/*compare with the parents*/
+}
+/*<span>text</text>*/
+
+p{
+	font-weight:bold;
+}
+
+/*h1{
+	font-weight:100-800;
+}*/
+
+p{
+	line-height:2;
+}
+
+h1{
+	text-align:right;
+}
+
+p{
+	text-align:center;
+}
+
+p{
+	text-decoration:underline;
+}
+
+h1{
+	text-decoration:line-through;
+}
+
+
+/*https://fonts.google.com/ */
+
+p{
+	width:50%;
+	border:2px solid blue;
+	padding-left:40px;
+	/*margin:100px;*/
+	/*margin-top:50px;
+*/	/*margin:20px 40px 500px 100px;*/
+margin:0 auto 0 auto;
+/*top right bottom left*/
+
+}
+
