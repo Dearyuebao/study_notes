@@ -1,0 +1,59 @@
+适用于bfs的题：
+
+第一类：
+树数据结构或者数组（数组编号-数组内容-内容作为数组编号 可以看为树结构）
+需要层序遍历的
+如637树每层求平均 785是否分为两部分每部分都没有连通 958题检查是不是完全二叉树
+这些都需要遍历树的每一个节点
+通常写法：
+Queue<TreeNode> q = new LinkedList<>();
+while(!q.isEmpty()) {
+  int size = q.size();
+  for(int i = 0; i < size; i++) {
+    ......
+  }
+}
+
+第二类：
+已知初始和结尾状态 可以表示成树的形式
+比如127word ladder
+也要用queue， 此题需要对queue中的每一个（for）元素的每一个字母（for char）变为每一个可能的字母
+（a-Z）检查改编后的在不在给的list里（把list写成hashmap来建校复杂度）每看完一层之后， level加一，
+直到找到destination时返回当前层数
+没有限制地直接返回层数比较简单 否则还要加其他判断
+
+第二类的衍生：找已知初始和结尾状态的最短路径
+用dijkstra算法 每次都找到路径最短的 实际上就是树从上往下遍历 找到层数最小的
+直到找到destination所在层 第一次把destination pop出来的就是从source到destination的最小值
+比如787题flights 
+写法：先把输入参数int[][] flights转化成图的形式表示
+通常写法：
+ Map<Integer, List<int[]>> graph = new HashMap<>();
+        for(int i = 0; i < times.length; i++) {
+            int start = times[i][0];
+            int end = times[i][1];//有的时候需要-1 当k不能代表当前i时
+            int value = times[i][2];
+            if(!graph.containsKey(start)) {
+                graph.put(start, new ArrayList<int[]>());
+            }
+            graph.get(start).add(new int[]{end, value});
+            if(start == K) {
+                Distance[end] = value;
+            }
+        }
+再加上priorityqueue
+ PriorityQueue<int[]> heap = new PriorityQueue<>((a,b) -> a[0] - b[0]);
+它的第一个参数要是source到每一个点的距离（层数）
+再对每一个访问到的找它可以通往的节点 
+如果没有被标记过（被当作最小值pop出来过）的话就offer到queue中
+大循环退出条件queue是空
+但是如果在循环的过程中访问到了destination就中途return了
+如果是要遍历所有节点找整体的需要走多少步的话
+就要遍历完return res了 这种情况下要考虑是否有没有被mark到的点 即非连通区域
+比如743题 network delay time
+flights那道题还加了不能超过k个中转站的限制
+因此在是否要往queue里加点之前要判断remainstop
+
+整体来说 最短路径要 先建graph再用priorityqueue
+普通bfs就是queue 有时候需要hashset hashmap等数据结构的辅助
+        
