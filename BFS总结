@@ -56,4 +56,8 @@ flights那道题还加了不能超过k个中转站的限制
 
 整体来说 最短路径要 先建graph再用priorityqueue
 普通bfs就是queue 有时候需要hashset hashmap等数据结构的辅助
+
+
+bfs一般要用queue 不要轻易用stack！！！先入后出很容易出问题的！！！
+
         
