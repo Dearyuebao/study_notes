@@ -1,0 +1,18 @@
+flights 建图 priorityqueue 记录visited bfs 打印路径
+        需要尝试bellman dp做法
+wizards 建图 priorityqueue 记录visited bfs 打印路径
+aliedic 1.正向建图（要先打印出来的放在map的key）indegree bfs queue 当入度为0的时候加入queue
+        判断是否有环（环的点入度永远不能为0 故不会被加到res中 比较res的长度和total即可）
+        2. 逆向建图（要先打印出来的放在map的value）dfs 当graph的key的size为0说明在他之前没有需要先打印出来的
+        于是把这个key加到结果里 再把key从其他的map的value里都去掉 进一步找key的size为0的 逐步打印 直到map所有的key的size都为0
+        这样子可以打印出来所有的路径 还更简单一些
+        -》以后需要打印所有路径 并且需要遍历到每个点得出一个整体的结论时 选用dfs 逆向建图
+        但是这道题的图比较简单 key和value值都是一样的string
+ski     需要建图 遍历所有点 打印路径 很符合aliendic可以用逆向建图+dfs的方法 
+        1. 已有答案的做法：map里包含两个内容，string就是当前点，还有一个node， node是一个新建的类，node.point是当前点的值， node.score
+        是到当前点的最大得分， node.next是一个map<String下一个点，integer到下一个点的距离>。还有indegree bfs 用一个map<string, string> link
+        来记录path， 当到当前点得分更大时，更新这个link，就像flights里的path一样 记录这当前点的上一个点 这样也是可以打印路径的
+        这种用在bfs的打印路径的方法只适用于打印一条最佳路径
+        -》最佳 == 可以用dijkstra（priority queue） + path / queue + indegree + link + 每次比较 + 遍历所有路径更新最大值
+        2. 按道理说可以尝试类似于aliendic的方法 但是由于map的key和value类型不一样 remove的时候有困难 不像想的那么简单
+        -》这道题用已有答案做法来实现
